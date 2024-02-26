@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
-from services import SensorDataService
+from backend.services.SensorDataService import SensorDataService
 
 app = Flask(__name__)
 PREFIX = '/sensor/'
-sensorDataService = SensorDataService.SensorDataService()
+sensorDataService = SensorDataService()
 
 
 @app.route(f'{PREFIX}/create', methods=['POST'])

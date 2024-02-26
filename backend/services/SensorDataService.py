@@ -1,6 +1,6 @@
 from azure.appconfiguration import AzureAppConfigurationClient
-from utils import Constants
-from data.DatabaseClient import DatabaseClient
+from backend.utils import Constants
+from backend.data.DatabaseClient import DatabaseClient
 
 
 class SensorDataService:
@@ -22,7 +22,7 @@ class SensorDataService:
         return item
 
     def update_item(self, item_id, data):
-        item = self.database_client.replace_item(item_id, data)
+        item = self.database_client.update_item(item_id, data)
         return item
 
     def delete_item(self, item_id):
