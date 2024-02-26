@@ -3,13 +3,13 @@ from backend.utils import Constants
 from backend.data.DatabaseClient import DatabaseClient
 
 
-class SensorDataService:
-    def __init__(self):
+class DataService:
+    def __init__(self, container_name_key):
         app_config_cs = Constants.APP_CONFIG_CONNECTION_STRING
         app_config_client = AzureAppConfigurationClient.from_connection_string(app_config_cs)
 
         app_config_label = Constants.APP_CONFIG_LABEL
-        container_name = app_config_client.get_configuration_setting(key=Constants.SENSOR_DATA_CONTAINER_NAME,
+        container_name = app_config_client.get_configuration_setting(key=container_name_key,
                                                                      label=app_config_label).value
         self.database_client = DatabaseClient(container_name=container_name)
 

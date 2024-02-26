@@ -1,6 +1,13 @@
+APP_CONFIG_CONNECTION_STRING = "Endpoint=https://ac-monitoring-app.azconfig.io;Id=d64Z;Secret=754WxaMb0rKIUxSJ/Jr2F0R47Oub55n0aoRducP+5gY="
 COSMOS_DB_ENDPOINT = 'CosmosDBEndpoint'
 COSMOS_DB_KEY = 'CosmosDBKey'
 DATABASE_NAME = 'DatabaseName'
-SENSOR_DATA_CONTAINER_NAME = 'SensorDataContainerName'
+SENSOR_DATA_CONTAINER = 'SensorDataContainer'
+DEVICE_STATE_DATA_CONTAINER = 'DeviceStateDataContainer'
+ACCESSIBILITY_EVENTS_DATA_CONTAINER = 'AccessibilityEventsDataContainer'
+ADDITIONAL_DATA_CONTAINER = 'AdditionalDataContainer'
+BATTERY_USAGE_CONTAINER = 'BatteryUsageDataContainer'
+CONNECTIVITY_DATA_CONTAINER = 'ConnectivityDataContainer'
+LOCATION_DATA_CONTAINER = 'LocationDataContainer'
+USAGE_STATS_DATA_CONTAINER = 'UsageStatsDataContainer'
 APP_CONFIG_LABEL = 'dev'
-APP_CONFIG_CONNECTION_STRING = "Endpoint=https://ac-monitoring-app.azconfig.io;Id=d64Z;Secret=754WxaMb0rKIUxSJ/Jr2F0R47Oub55n0aoRducP+5gY="
