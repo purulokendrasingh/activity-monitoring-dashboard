@@ -1,6 +1,6 @@
 from azure.appconfiguration import AzureAppConfigurationClient
 from azure.cosmos import CosmosClient
-from backend.utils import Constants
+from utils import Constants
 
 
 class DatabaseClient:

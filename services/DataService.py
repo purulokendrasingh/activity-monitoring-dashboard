@@ -1,6 +1,6 @@
 from azure.appconfiguration import AzureAppConfigurationClient
-from backend.utils import Constants
-from backend.data.DatabaseClient import DatabaseClient
+from utils import Constants
+from data.DatabaseClient import DatabaseClient
 
 
 class DataService:

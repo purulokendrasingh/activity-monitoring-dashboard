@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, Blueprint
-from backend.services.DataService import DataService
-from backend.utils import Constants
+from services.DataService import DataService
+from utils import Constants
 
 ae_bp = Blueprint('accessibility-events', __name__)
 PREFIX = '/accessibility-events/'
