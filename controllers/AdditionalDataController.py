@@ -7,6 +7,11 @@ PREFIX = '/additional-data/'
 service = DataService(container_name_key=Constants.ADDITIONAL_DATA_CONTAINER)
 
 
+@ad_bp.route(f'{PREFIX}/health', methods=['GET'])
+def health_check():
+    return jsonify({'message': 'Service is healthy'})
+
+
 @ad_bp.route(f'{PREFIX}/create', methods=['POST'])
 def create():
     data = request.json

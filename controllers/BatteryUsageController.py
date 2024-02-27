@@ -7,6 +7,11 @@ PREFIX = '/battery-usage/'
 service = DataService(container_name_key=Constants.BATTERY_USAGE_CONTAINER)
 
 
+@bu_bp.route(f'{PREFIX}/health', methods=['GET'])
+def health_check():
+    return jsonify({'message': 'Service is healthy'})
+
+
 @bu_bp.route(f'{PREFIX}/create', methods=['POST'])
 def create():
     data = request.json
