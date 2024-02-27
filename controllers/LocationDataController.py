@@ -7,6 +7,11 @@ PREFIX = '/location-data/'
 service = DataService(container_name_key=Constants.LOCATION_DATA_CONTAINER)
 
 
+@ld_bp.route(f'{PREFIX}/health', methods=['GET'])
+def health_check():
+    return jsonify({'message': 'Service is healthy'})
+
+
 @ld_bp.route(f'{PREFIX}/create', methods=['POST'])
 def create():
     data = request.json
