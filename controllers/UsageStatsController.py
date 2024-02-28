@@ -36,3 +36,11 @@ def update(item_id):
 def delete(item_id):
     service.delete_item(item_id)
     return jsonify({'message': 'Item deleted successfully'})
+
+
+@us_bp.route(f'{PREFIX}/fetch-records/<device_id>', methods=['GET'])
+def fetch_records(device_id):
+    page = int(request.args.get('page', 1))
+    page_size = int(request.args.get('page_size', 10))
+    response = service.fetch_records(device_id, page, page_size)
+    return jsonify(response)

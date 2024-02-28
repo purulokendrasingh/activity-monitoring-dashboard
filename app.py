@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from controllers.AccessibilityEventsController import ae_bp
 from controllers.AdditionalDataController import ad_bp
 from controllers.BatteryUsageController import bu_bp
@@ -19,6 +20,7 @@ def create_app():
     application.register_blueprint(ld_bp)
     application.register_blueprint(sd_bp)
     application.register_blueprint(us_bp)
+    CORS(application)
     return application
 
 
