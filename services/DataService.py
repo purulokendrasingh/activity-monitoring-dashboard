@@ -27,3 +27,7 @@ class DataService:
 
     def delete_item(self, item_id):
         self.database_client.delete_item(item_id)
+
+    def fetch_records(self, device_id, page, page_size):
+        response = self.database_client.fetch_records(device_id, page, page_size)
+        return response

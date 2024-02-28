@@ -35,3 +35,24 @@ class DatabaseClient:
 
     def delete_item(self, item_id):
         self.container.delete_item(item_id, partition_key=item_id)
+
+    def fetch_records(self, device_id, page, page_size):
+        skip = (page - 1) * page_size
+
+        query = f"SELECT * FROM c WHERE c.device_id = '{device_id}' ORDER BY c._ts DESC OFFSET {skip} LIMIT {page_size}"
+        results = list(self.container.query_items(query=query, enable_cross_partition_query=True))
+
+        # Get total count of records
+        total_count = self.container.query_items(
+            query=f"SELECT VALUE COUNT(1) FROM c WHERE c.device_id = '{device_id}'",
+            enable_cross_partition_query=True).next()
+
+        # Create paginated response
+        response = {
+            'total_count': total_count,
+            'page': page,
+            'page_size': page_size,
+            'records': results
+        }
+
+        return response
